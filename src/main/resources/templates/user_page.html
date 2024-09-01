@@ -10,7 +10,7 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             // Отправка запроса для получения текущего пользователя
-            fetch('/api')
+            fetch('/user')
                 .then(response => response.json())
                 .then(user => {
                     // Обновление элементов страницы с полученными данными пользователя
