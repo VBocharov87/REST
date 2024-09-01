@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <!-- Подключаем CSS Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .form-signin {
+            max-width: 330px;
+            margin: auto;
+            text-align: left; /* Выровнять заголовок по левому краю */
+            font-family: Arial, Helvetica, sans-serif; /* Шрифт, похожий на стандартный Spring Security */
+        }
+
+        .form-signin h1 {
+            font-weight: bold; /* Сделать шрифт жирным */
+        }
+    </style>
+</head>
+<body class="text-center">
+<div class="container">
+    <form class="form-signin" th:action="@{/login}" method="post">
+        <!-- Заголовок, выровненный по левой стороне и жирный -->
+        <br><br>
+        <h1 class="h3 mb-3 font-weight-bold">Please sign in</h1>
+
+        <label for="username" class="sr-only">Email address</label>
+        <input type="text" id="username" name="username" class="form-control" placeholder="Email address" required autofocus>
+
+        <label for="password" class="sr-only">Password</label>
+        <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+
+        <!-- Добавляем отступ сверху с помощью класса mt-3 -->
+        <button class="btn btn-lg btn-primary btn-block mt-2" type="submit">Sign in</button>
+    </form>
+</div>
+
+<!-- Подключаем JS Bootstrap и зависимости -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
