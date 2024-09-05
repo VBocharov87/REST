@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RestController;
 import ru.kata.spring.boot_security.demo.entities.User;
 
 @RestController
-@RequestMapping("/user/**")
+@RequestMapping("/user")
 public class UserController {
 
-    @GetMapping
+    @GetMapping("/current")
     public ResponseEntity<User> getCurrentUser() {
 
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();

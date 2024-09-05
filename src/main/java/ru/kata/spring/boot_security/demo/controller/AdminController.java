@@ -14,7 +14,7 @@ import ru.kata.spring.boot_security.demo.service.UserService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/admin/**")
+@RequestMapping("/admin")
 public class AdminController {
 
     private final UserService userService;
@@ -26,7 +26,7 @@ public class AdminController {
         this.roleService = roleService;
     }
 
-    @GetMapping
+    @GetMapping("/current")
     public ResponseEntity<User> getCurrentUser() {
 
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
