@@ -21,9 +21,9 @@ public class SuccessUserHandler implements AuthenticationSuccessHandler {
         String redirectUrl;
 
         if (roles.contains("ROLE_ADMIN")) {
-            redirectUrl = "/admin_page";
+            redirectUrl = "/admin";
         } else if (roles.contains("ROLE_USER")) {
-            redirectUrl = "/user_page";
+            redirectUrl = "/user";
         } else  redirectUrl = "/";
 
         httpServletResponse.sendRedirect(redirectUrl);

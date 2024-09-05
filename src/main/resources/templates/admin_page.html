@@ -59,7 +59,7 @@
         document.addEventListener("DOMContentLoaded", function () {
             // Функция для загрузки ролей
             function loadRoles() {
-                fetch('/api/roles')
+                fetch('/admin/roles')
                     .then(response => response.json())
                     .then(roles => {
                         const rolesSelect = document.querySelector('#Roles');
@@ -81,7 +81,7 @@
             loadRoles(); // Вызов функции для загрузки ролей
 
             // Отправка запроса для получения текущего пользователя
-            fetch('/api')
+            fetch('/admin')
                 .then(response => response.json())
                 .then(user => {
                     // Обновление элементов страницы с полученными данными пользователя
@@ -121,7 +121,7 @@
             $(document).ready(function () {
                 // Функция загрузки пользователей и установки обработчиков событий
                 function loadUsers() {
-                    fetch('/api/users')
+                    fetch('/admin/users')
                         .then(response => response.json())
                         .then(users => {
                             const tbody = $('#users-table-content tbody');
@@ -169,7 +169,7 @@
                     const rolesSelect = $('#Edit_Roles');
                     rolesSelect.empty();
 
-                    fetch('/api/roles')
+                    fetch('/admin/roles')
                         .then(response => response.json())
                         .then(allRoles => {
                             allRoles.forEach(role => {
@@ -233,7 +233,7 @@
                     };
 
                     // Отправляем данные на сервер
-                    fetch('/api/users', {
+                    fetch('/admin/users', {
                         method: 'PUT',
                         headers: {
                             'Content-Type': 'application/json'
@@ -273,7 +273,7 @@
                     };
 
                     // Отправляем данные на сервер
-                    fetch('/api/users', {
+                    fetch('/admin/users', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
@@ -299,7 +299,7 @@
                 $('#delete-user-button').off('click').on('click', function () {
                     const userId = $('#Delete_ID').val(); // Получаем ID пользователя из скрытого поля
 
-                    fetch(`/api/users/${userId}`, {
+                    fetch(`/admin/users/${userId}`, {
                         method: 'DELETE'
                     })
                         .then(response => {
